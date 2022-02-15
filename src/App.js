@@ -1,14 +1,30 @@
 import React from "react";
 
+import backgroundMain from "./img/image-main.jpg";
+
 function App() {
   return (
-    <main className="container mt-5">
-      <section className="row">
-        <div className="col col-12">
-          <h1>Hola mundo</h1>
+    <>
+      <section className="imgBackground">
+        <img src={backgroundMain} alt="mountains" />
+      </section>
+      <section>
+        <h1>T O D O</h1>
+        <div className="main-add-list">
+          <div>
+            <h2>Hola</h2>
+          </div>
+        </div>
+        <div className="main-item-list">
+          <ul>
+            <li className="list-group-item list-group-item-action li">Hola</li>
+            <li className="list-group-item list-group-item-action li">Hola</li>
+            <li className="list-group-item list-group-item-action li">Hola</li>
+            <li className="list-group-item list-group-item-action li">Hola</li>
+          </ul>
         </div>
       </section>
-    </main>
+    </>
   );
 }
 

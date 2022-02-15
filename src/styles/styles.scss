@@ -1,0 +1,61 @@
+@use "./fonts" as f;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Work Sans", sans-serif;
+}
+
+// MAIN IMAGE
+
+img {
+    width: 100%;
+}
+.imgBackground{
+    position: relative;
+}
+.imgBackground::after {
+    width:100%;
+    content:'';
+    display:block;
+    position:absolute;
+    top:0;
+    left:0;
+    background: rgb(188,0,241);
+    background: linear-gradient(90deg, rgba(188,0,241,1) 0%, rgba(117,103,255,1) 53%, rgba(139,235,255,1) 100%);
+    height:100%;
+    opacity: 55%;
+}
+
+body{
+    background-color: rgb(212, 212, 212);
+}
+
+h1{
+    position: absolute;
+    top: 16%;
+    left: 30%;
+    color: white;
+    font-weight: 600;
+}
+.main-add-list{
+    background-color: white;
+    width: 35%;
+    height: 70px;
+    border-radius: 5px;
+    position: absolute;
+    top: 26%;
+    left: 32.5%;
+}
+h2{
+    font-family: f.$comicSans;
+    text-align: center;
+    font-weight: 600;
+    font-size: 21px;
+}
+.li {
+    width: 35%;
+    margin: auto;
+    border-radius: 5px 5px 0px 0px;
+}
