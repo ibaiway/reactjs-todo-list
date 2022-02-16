@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
+import ListTodo from "./components/ListTodo";
 
 import backgroundMain from "./img/image-main.jpg";
 import noItems from "./img/todoList.png";
 
 function App() {
+  const defaultTodos = [
+    { text: "Clean kitchen", done: true },
+    { text: "Do the laundry", done: false },
+    { text: "Buy bread", done: true },
+    { text: "Code all night", done: false },
+  ];
+
+  const [todos, setTodos] = useState([...defaultTodos]);
   return (
     <>
       <section className="imgBackground">
@@ -17,12 +26,7 @@ function App() {
           </div>
         </div>
         <div className="main-item-list">
-          <ul>
-            <li className="list-group-item li">Hola</li>
-            <li className="list-group-item li">Hola</li>
-            <li className="list-group-item li">Hola</li>
-            <li className="list-group-item li">Hola</li>
-          </ul>
+          <ListTodo todos={todos} />
           <nav className="list-group-item li-nav">
             <a href="http://localhost:3000" className="nav-li-first">
               5 items left
@@ -47,6 +51,12 @@ function App() {
         </div>
       </section>
       <footer>Drag and drop to reorder list</footer>
+      <button
+        type="button"
+        onClick={() => setTodos([...todos, { text: "prueba", done: false }])}
+      >
+        Click me
+      </button>
     </>
   );
 }
