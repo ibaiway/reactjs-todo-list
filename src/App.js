@@ -1,6 +1,7 @@
 import React from "react";
 
 import backgroundMain from "./img/image-main.jpg";
+import noItems from "./img/todoList.png";
 
 function App() {
   return (
@@ -21,16 +22,28 @@ function App() {
             <li className="list-group-item li">Hola</li>
             <li className="list-group-item li">Hola</li>
             <li className="list-group-item li">Hola</li>
-            <nav className="list-group-item li-nav">
-              <ul>
-                <li className="nav-li-first">5 items left</li>
-                <li className="nav-li">All</li>
-                <li className="nav-li">Active</li>
-                <li className="nav-li">Completed</li>
-                <li className="nav-li-last">Clear Completed</li>
-              </ul>
-            </nav>
           </ul>
+          <nav className="list-group-item li-nav">
+            <a href="http://localhost:3000" className="nav-li-first">
+              5 items left
+            </a>
+            <a href="http://localhost:3000" className="nav-li">
+              All
+            </a>
+            <a href="http://localhost:3000" className="nav-li">
+              Active
+            </a>
+            <a href="http://localhost:3000" className="nav-li">
+              Completed
+            </a>
+            <a href="http://localhost:3000" className="nav-li-last">
+              Clear Completed
+            </a>
+          </nav>
+        </div>
+        <div>
+          <img src={noItems} alt="todo list" className="noItems" />
+          <h3 className="noItems-add">Add your first todo</h3>
         </div>
       </section>
       <footer>Drag and drop to reorder list</footer>
