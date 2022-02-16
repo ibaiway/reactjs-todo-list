@@ -7,6 +7,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./styles/styles.scss";
 import "./components/ListTodo/ListTodo.scss";
+import "./components/Footer/Footer.scss";
 
 ReactDOM.render(
   <React.StrictMode>

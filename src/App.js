@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ListTodo from "./components/ListTodo";
 import NewTodoForm from "./components/NewTodoForm/NewTodoForm";
+import Footer from "./components/Footer";
 
 import backgroundMain from "./img/image-main.jpg";
 import noItems from "./img/todoList.png";
@@ -49,32 +50,17 @@ function App() {
         </div>
         <div className="main-item-list">
           <ListTodo todos={todos} toogleItemTodo={toogleItemTodo} />
-          <nav className="list-group-item li-nav">
-            <a href="http://localhost:3000" className="nav-li-first">
-              5 items left
-            </a>
-            <a href="http://localhost:3000" className="nav-li">
-              All
-            </a>
-            <a href="http://localhost:3000" className="nav-li">
-              Active
-            </a>
-            <a href="http://localhost:3000" className="nav-li">
-              Completed
-            </a>
-            <a href="http://localhost:3000" className="nav-li-last">
-              Clear Completed
-            </a>
-          </nav>
+          <Footer />
+        </div>
+        <div>
+          <img src={noItems} alt="todo list" className="noItems" />
         </div>
         <div data-testid="no-todos">
-          <img src={noItems} alt="todo list" className="noItems" />
           <h3 className="noItems-add">
             You can create your first todo to get started
           </h3>
         </div>
       </section>
-      <footer>Drag and drop to reorder list</footer>
       <button
         type="button"
         onClick={() => setTodos([...todos, { text: "prueba", done: false }])}
