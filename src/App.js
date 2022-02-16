@@ -67,9 +67,11 @@ function App() {
             </a>
           </nav>
         </div>
-        <div>
+        <div data-testid="no-todos">
           <img src={noItems} alt="todo list" className="noItems" />
-          <h3 className="noItems-add">Add your first todo</h3>
+          <h3 className="noItems-add">
+            You can create your first todo to get started
+          </h3>
         </div>
       </section>
       <footer>Drag and drop to reorder list</footer>
