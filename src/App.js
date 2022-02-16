@@ -7,10 +7,10 @@ import noItems from "./img/todoList.png";
 
 function App() {
   const defaultTodos = [
-    { text: "Clean kitchen", done: true },
-    { text: "Do the laundry", done: false },
-    { text: "Buy bread", done: true },
-    { text: "Code all night", done: false },
+    { text: "Clean kitchen", done: true, id: 11 },
+    { text: "Do the laundry", done: false, id: 22 },
+    { text: "Buy bread", done: true, id: 33 },
+    { text: "Code all night", done: false, id: 44 },
   ];
 
   const [todos, setTodos] = useState([...defaultTodos]);
@@ -18,6 +18,23 @@ function App() {
   function saveNewTodo(newTodo) {
     setTodos([...todos, newTodo]);
   }
+
+  function toogleItemTodo(todoId) {
+    const updatedTodoItems = todos.map((item) => {
+      if (item.id === todoId) {
+        return {
+          ...item,
+          done: !item.done,
+        };
+      }
+
+      return item;
+    });
+
+    setTodos([...updatedTodoItems]);
+    console.log(todos);
+  }
+
   return (
     <>
       <section className="imgBackground">
@@ -31,7 +48,7 @@ function App() {
           </div>
         </div>
         <div className="main-item-list">
-          <ListTodo todos={todos} />
+          <ListTodo todos={todos} toogleItemTodo={toogleItemTodo} />
           <nav className="list-group-item li-nav">
             <a href="http://localhost:3000" className="nav-li-first">
               5 items left
