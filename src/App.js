@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ListTodo from "./components/ListTodo";
+import NewTodoForm from "./components/NewTodoForm/NewTodoForm";
 
 import backgroundMain from "./img/image-main.jpg";
 import noItems from "./img/todoList.png";
@@ -13,6 +14,10 @@ function App() {
   ];
 
   const [todos, setTodos] = useState([...defaultTodos]);
+
+  function saveNewTodo(newTodo) {
+    setTodos([...todos, newTodo]);
+  }
   return (
     <>
       <section className="imgBackground">
@@ -22,7 +27,7 @@ function App() {
         <h1>T O D O</h1>
         <div className="main-add-list">
           <div>
-            <input type="text" />
+            <NewTodoForm saveNewTodo={saveNewTodo} />
           </div>
         </div>
         <div className="main-item-list">
