@@ -61,12 +61,6 @@ function App() {
           </h3>
         </div>
       </section>
-      <button
-        type="button"
-        onClick={() => setTodos([...todos, { text: "prueba", done: false }])}
-      >
-        Click me
-      </button>
     </>
   );
 }
