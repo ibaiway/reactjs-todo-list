@@ -9,6 +9,7 @@ function ItemTodo({ text, done = true, id, toogleItemTodo }) {
   return (
     <>
       <input
+        className="checkbox"
         type="checkbox"
         defaultChecked={done}
         onChange={handleChange}
