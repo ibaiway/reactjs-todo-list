@@ -40,11 +40,13 @@ h1{
     width: 35%;
     height: 70px;
     border-radius: 5px;
-    position: absolute;
     top: 26%;
     left: 32.5%;
+    margin-top: -120px;
+    margin-bottom: 55px;
+    position:relative;
 }
-input{
+.form-control{
     font-family: f.$comicSans;
     text-align: center;
     font-weight: 600;
