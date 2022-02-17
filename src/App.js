@@ -11,14 +11,15 @@ import Completed from "./pages/Completed";
 import All from "./pages/All";
 
 function App() {
-  const defaultTodos = [
+  /* const defaultTodos = [
     { text: "Clean kitchen", done: true, id: 11 },
     { text: "Do the laundry", done: false, id: 22 },
     { text: "Buy bread", done: true, id: 33 },
     { text: "Code all night", done: false, id: 44 },
   ];
+  console.log(defaultTodos); */
 
-  const [todos, setTodos] = useState([...defaultTodos]);
+  const [todos, setTodos] = useState([]);
 
   function saveNewTodo(newTodo) {
     setTodos([...todos, newTodo]);
@@ -37,7 +38,6 @@ function App() {
     });
 
     setTodos([...updatedTodoItems]);
-    console.log(todos);
   }
 
   return (
@@ -56,7 +56,7 @@ function App() {
       <section>
         <ListTodo todos={todos} toogleItemTodo={toogleItemTodo} />
         <div className="main-item-list">
-          <Footer />
+          <Footer todos={todos} />
           <Route path="/" exact>
             <All />
           </Route>
@@ -76,12 +76,6 @@ function App() {
           You can create your first todo to get started
         </h3>
       </div>
-      <button
-        type="button"
-        onClick={() => setTodos([...todos, { text: "prueba", done: false }])}
-      >
-        Click me
-      </button>
     </Router>
   );
 }
