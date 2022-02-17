@@ -1,10 +1,11 @@
 import React from "react";
 
-function Footer() {
+function Footer({ todos }) {
+  const todosLength = todos.length;
   return (
     <footer className="list-group-item li-nav">
       <a href="http://localhost:3000" className="nav-li-first">
-        {/* INSERT TODO .LENGTH */}items left
+        {todosLength} items left
       </a>
       <a href="http://localhost:3000" className="nav-li">
         All

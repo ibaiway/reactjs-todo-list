@@ -50,7 +50,7 @@ function App() {
         </div>
         <div className="main-item-list">
           <ListTodo todos={todos} toogleItemTodo={toogleItemTodo} />
-          <Footer />
+          <Footer todos={todos} />
         </div>
         <div>
           <img src={noItems} alt="todo list" className="noItems" />
