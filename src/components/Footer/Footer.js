@@ -1,25 +1,24 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
-function Footer() {
+const Footer = () => {
   return (
     <footer className="list-group-item li-nav">
-      <a href="http://localhost:3000" className="nav-li-first">
-        {/* INSERT TODO .LENGTH */}items left
-      </a>
-      <a href="http://localhost:3000" className="nav-li">
-        All
-      </a>
-      <a href="http://localhost:3000" className="nav-li">
-        Active
-      </a>
-      <a href="http://localhost:3000" className="nav-li">
-        Completed
-      </a>
-      <a href="http://localhost:3000" className="nav-li-last">
-        Clear Completed
-      </a>
+      <div className="nav-li-first">
+        <NavLink to="/complete">{/* INSERT TODO .LENGTH */}items left</NavLink>
+      </div>
+      <div className="nav-li">
+        <NavLink to="/">All</NavLink>
+      </div>
+      <div className="nav-li">
+        <NavLink to="/active">Active</NavLink>
+      </div>
+      <div className="nav-li">
+        <NavLink to="/completed">Completed</NavLink>
+      </div>
+      <div className="nav-li-last">Clear</div>
       <p className="infoBottom">Drag and drop to reorder list</p>
     </footer>
   );
-}
+};
 export default Footer;

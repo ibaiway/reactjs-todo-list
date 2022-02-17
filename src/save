@@ -1,0 +1,16 @@
+</div>
+        <div>
+          <img src={noItems} alt="todo list" className="noItems" />
+        </div>
+        <div data-testid="no-todos">
+          <h3 className="noItems-add">
+            You can create your first todo to get started
+          </h3>
+        </div>
+      </section>
+      <button
+        type="button"
+        onClick={() => setTodos([...todos, { text: "prueba", done: false }])}
+      >
+        Click me
+      </button>
