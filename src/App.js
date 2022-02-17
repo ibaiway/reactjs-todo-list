@@ -7,14 +7,15 @@ import backgroundMain from "./img/image-main.jpg";
 import noItems from "./img/todoList.png";
 
 function App() {
-  const defaultTodos = [
+  /* const defaultTodos = [
     { text: "Clean kitchen", done: true, id: 11 },
     { text: "Do the laundry", done: false, id: 22 },
     { text: "Buy bread", done: true, id: 33 },
     { text: "Code all night", done: false, id: 44 },
   ];
+  console.log(defaultTodos); */
 
-  const [todos, setTodos] = useState([...defaultTodos]);
+  const [todos, setTodos] = useState([]);
 
   function saveNewTodo(newTodo) {
     setTodos([...todos, newTodo]);
@@ -33,7 +34,6 @@ function App() {
     });
 
     setTodos([...updatedTodoItems]);
-    console.log(todos);
   }
 
   return (

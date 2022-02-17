@@ -2,8 +2,7 @@ import React from "react";
 
 function ItemTodo({ text, done = true, id, toogleItemTodo }) {
   const handleChange = (event) => {
-    console.log("The checkbox was checked");
-    const todoId = parseInt(event.target.getAttribute("data-id"), 10);
+    const todoId = event.target.getAttribute("data-id");
     toogleItemTodo(todoId);
   };
 
