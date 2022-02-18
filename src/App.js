@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import ListTodo from "./components/ListTodo";
 import NewTodoForm from "./components/NewTodoForm/NewTodoForm";
@@ -10,6 +10,22 @@ import Active from "./pages/Active";
 import Completed from "./pages/Completed";
 import All from "./pages/All";
 
+const LOCAL_STORAGE_KEY = "reactjs-todo-list";
+
+function loadLocalStorageData() {
+  const prevItems = localStorage.getItem(LOCAL_STORAGE_KEY);
+
+  if (!prevItems) {
+    return [];
+  }
+
+  try {
+    return JSON.parse(prevItems);
+  } catch (error) {
+    return [];
+  }
+}
+
 function App() {
   /* const defaultTodos = [
     { text: "Clean kitchen", done: true, id: 11 },
@@ -19,7 +35,12 @@ function App() {
   ];
   console.log(defaultTodos); */
 
-  const [todos, setTodos] = useState([]);
+  const localStorageTodos = loadLocalStorageData();
+  const [todos, setTodos] = useState(localStorageTodos);
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
+  }, [todos]);
 
   function saveNewTodo(newTodo) {
     setTodos([...todos, newTodo]);
