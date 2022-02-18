@@ -1,8 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-function Footer({ todos }) {
+function Footer({ todos, removeCompletedTodos }) {
   const todosLength = todos.length;
+
+  const handleRemove = () => {
+    removeCompletedTodos();
+  };
   return (
     <footer className="list-group-item li-nav">
       <div className="nav-li-first">
@@ -23,7 +27,11 @@ function Footer({ todos }) {
           Completed
         </NavLink>
       </div>
-      <div className="nav-li-last">Clear</div>
+      <div className="nav-li-last">
+        <button type="button" onClick={handleRemove}>
+          Remove
+        </button>
+      </div>
       <p className="infoBottom">Drag and drop to reorder list</p>
     </footer>
   );

@@ -60,6 +60,14 @@ function App() {
     setTodos([...updatedTodoItems]);
   }
 
+  function removeCompletedTodos() {
+    const filteredTodos = todos.filter((item) => {
+      return !item.done;
+    });
+
+    setTodos([...filteredTodos]);
+  }
+
   return (
     <Router>
       <section className="imgBackground">
@@ -86,7 +94,7 @@ function App() {
               <Completed todos={todos} toogleItemTodo={toogleItemTodo} />
             </Route>
           </Switch>
-          <Footer todos={todos} />
+          <Footer todos={todos} removeCompletedTodos={removeCompletedTodos} />
         </div>
       </section>
       <div>
