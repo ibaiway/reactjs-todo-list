@@ -8,7 +8,7 @@ function Footer({ todos, removeCompletedTodos }) {
     removeCompletedTodos();
   };
   return (
-    <footer className="list-group-item li-nav">
+    <footer className="list-group-item li-nav" data-testid="app-footer">
       <div className="nav-li-first">
         <NavLink to="/complete">{todosLength} items left</NavLink>
       </div>
@@ -28,7 +28,11 @@ function Footer({ todos, removeCompletedTodos }) {
         </NavLink>
       </div>
       <div className="nav-li-last">
-        <button type="button" onClick={handleRemove}>
+        <button
+          type="button"
+          onClick={handleRemove}
+          data-testid="clear-completed-todos"
+        >
           Remove
         </button>
       </div>
