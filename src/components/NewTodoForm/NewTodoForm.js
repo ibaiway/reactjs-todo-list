@@ -22,9 +22,10 @@ function NewTodoForm({ saveNewTodo }) {
         title: "",
       }}
       validationSchema={todoSchema}
-      onSubmit={(values) => {
+      onSubmit={(values, { resetForm }) => {
         const newTodo = addTodoDetails(values);
         saveNewTodo(newTodo);
+        resetForm();
       }}
     >
       {({
