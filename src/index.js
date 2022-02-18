@@ -8,6 +8,7 @@ import reportWebVitals from "./reportWebVitals";
 import "./styles/styles.scss";
 import "./components/ListTodo/ListTodo.scss";
 import "./components/Footer/Footer.scss";
+import "./components/ItemTodo/Checkbox.scss";
 
 ReactDOM.render(
   <React.StrictMode>

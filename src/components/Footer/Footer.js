@@ -9,13 +9,19 @@ function Footer({ todos }) {
         <NavLink to="/complete">{todosLength}items left</NavLink>
       </div>
       <div className="nav-li">
-        <NavLink to="/">All</NavLink>
+        <NavLink exact to="/" activeClassName="is-active">
+          All
+        </NavLink>
       </div>
       <div className="nav-li">
-        <NavLink to="/active">Active</NavLink>
+        <NavLink exact to="/active" activeClassName="is-active">
+          Active
+        </NavLink>
       </div>
       <div className="nav-li">
-        <NavLink to="/completed">Completed</NavLink>
+        <NavLink exact to="/completed" activeClassName="is-active">
+          Completed
+        </NavLink>
       </div>
       <div className="nav-li-last">Clear</div>
       <p className="infoBottom">Drag and drop to reorder list</p>

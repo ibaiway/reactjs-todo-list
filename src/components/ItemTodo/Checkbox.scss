@@ -1,0 +1,46 @@
+@use "../../styles/fonts.scss" as f;
+
+.round label {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 28px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 28px;
+    margin: 20px 0px 0px 20px;
+}
+
+.round label:after {
+    border: 2px solid #fff;
+    border-top: none;
+    border-right: none;
+    content: "";
+    height: 6px;
+    left: 7px;
+    opacity: 0;
+    position: absolute;
+    top: 8px;
+    transform: rotate(-45deg);
+    width: 12px;
+}
+
+.round input[type="checkbox"] {
+    visibility: hidden;
+}
+
+.round input[type="checkbox"]:checked + label {
+    background-image: linear-gradient(125deg, #b62b86, #9f589e, #7e76b7, #3a8fd1);
+}
+
+.round input[type="checkbox"]:checked + label:after {
+    opacity: 1;
+}
+
+.todoInfo {
+    margin: 5px 0px 0px 60px;
+    font-family:f.$comicSans;
+    color: rgba(0, 0, 0, 0.795);
+}

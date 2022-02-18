@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ListTodo from "./components/ListTodo";
 import NewTodoForm from "./components/NewTodoForm/NewTodoForm";
 import Footer from "./components/Footer";
@@ -8,7 +8,7 @@ import backgroundMain from "./img/image-main.jpg";
 import noItems from "./img/todoList.png";
 import Active from "./pages/Active";
 import Completed from "./pages/Completed";
-import All from "./pages/All";
+import Home from "./pages/Home";
 
 const LOCAL_STORAGE_KEY = "reactjs-todo-list";
 
@@ -78,15 +78,17 @@ function App() {
         <ListTodo todos={todos} toogleItemTodo={toogleItemTodo} />
         <div className="main-item-list">
           <Footer todos={todos} />
-          <Route path="/" exact>
-            <All />
-          </Route>
-          <Route path="/Active" exact>
-            <Active />
-          </Route>
-          <Route path="/Completed" exact>
-            <Completed />
-          </Route>
+          <Switch>
+            <Route path="/" exact>
+              <Home />
+            </Route>
+            <Route path="/active" exact>
+              <Active />
+            </Route>
+            <Route path="/completed" exact>
+              <Completed />
+            </Route>
+          </Switch>
         </div>
       </section>
       <div>
