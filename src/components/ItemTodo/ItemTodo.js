@@ -1,6 +1,6 @@
 import React from "react";
 
-function ItemTodo({ text, done = true, id, toogleItemTodo }) {
+function ItemTodo({ text, done = true, id, toogleItemTodo, empty = "" }) {
   const handleChange = (event) => {
     const todoId = event.target.getAttribute("data-id");
     toogleItemTodo(todoId);
@@ -8,14 +8,18 @@ function ItemTodo({ text, done = true, id, toogleItemTodo }) {
 
   return (
     <>
-      <input
-        className=""
-        type="checkbox"
-        defaultChecked={done}
-        onChange={handleChange}
-        data-id={id}
-      />
-      <p>{text}</p>
+      <div className="round">
+        <input
+          className="checkbox"
+          type="checkbox"
+          defaultChecked={done}
+          onChange={handleChange}
+          id={id}
+          data-id={id}
+        />
+        <label htmlFor={id}>{empty}</label>
+        <p className="todoInfo">{text}</p>
+      </div>
     </>
   );
 }
