@@ -6,7 +6,7 @@ function Footer({ todos }) {
   return (
     <footer className="list-group-item li-nav">
       <div className="nav-li-first">
-        <NavLink to="/complete">{todosLength}items left</NavLink>
+        <NavLink to="/complete">{todosLength} items left</NavLink>
       </div>
       <div className="nav-li">
         <NavLink exact to="/" activeClassName="is-active">
@@ -24,7 +24,7 @@ function Footer({ todos }) {
         </NavLink>
       </div>
       <div className="nav-li-last">Clear</div>
-      <p className="infoBottom">Drag and drop to reorder list</p>
+      {/* <p className="infoBottom">Drag and drop to reorder list</p> */}
     </footer>
   );
 }
