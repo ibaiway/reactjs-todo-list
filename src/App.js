@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NewTodoForm from "./components/NewTodoForm/NewTodoForm";
 import Footer from "./components/Footer";
+import EmptyTodos from "./components/EmptyTodos/EmptyTodos";
 
 import backgroundMain from "./img/image-main.jpg";
-import noItems from "./img/todoList.png";
 import Active from "./pages/Active";
 import Completed from "./pages/Completed";
 import Home from "./pages/Home";
@@ -94,17 +94,10 @@ function App() {
               <Completed todos={todos} toogleItemTodo={toogleItemTodo} />
             </Route>
           </Switch>
+          {todos.length <= 0 && <EmptyTodos />}
           <Footer todos={todos} removeCompletedTodos={removeCompletedTodos} />
         </div>
       </section>
-      <div>
-        <img src={noItems} alt="todo list" className="noItems" />
-      </div>
-      <div data-testid="no-todos">
-        <h3 className="noItems-add">
-          You can create your first todo to get started
-        </h3>
-      </div>
     </Router>
   );
 }

@@ -10,7 +10,7 @@ function Footer({ todos, removeCompletedTodos }) {
   return (
     <footer className="list-group-item li-nav">
       <div className="nav-li-first">
-        <NavLink to="/complete">{todosLength}items left</NavLink>
+        <NavLink to="/complete">{todosLength} items left</NavLink>
       </div>
       <div className="nav-li">
         <NavLink exact to="/" activeClassName="is-active">
