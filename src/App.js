@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import ListTodo from "./components/ListTodo";
 import NewTodoForm from "./components/NewTodoForm/NewTodoForm";
 import Footer from "./components/Footer";
 
@@ -54,20 +53,19 @@ function App() {
         </div>
       </section>
       <section>
-        <ListTodo todos={todos} toogleItemTodo={toogleItemTodo} />
         <div className="main-item-list">
-          <Footer todos={todos} />
           <Switch>
             <Route path="/" exact>
-              <Home />
+              <Home todos={todos} toogleItemTodo={toogleItemTodo} />
             </Route>
             <Route path="/active" exact>
-              <Active />
+              <Active todos={todos} toogleItemTodo={toogleItemTodo} />
             </Route>
             <Route path="/completed" exact>
-              <Completed />
+              <Completed todos={todos} toogleItemTodo={toogleItemTodo} />
             </Route>
           </Switch>
+          <Footer todos={todos} />
         </div>
       </section>
       <div>

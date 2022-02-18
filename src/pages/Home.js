@@ -1,9 +1,12 @@
 import React from "react";
+import ListTodo from "../components/ListTodo";
 
-const Home = () => (
-  <div>
-    <p>Home</p>
-  </div>
-);
+function Home({ todos, toogleItemTodo }) {
+  return (
+    <div>
+      <ListTodo todos={todos} toogleItemTodo={toogleItemTodo} />
+    </div>
+  );
+}
 
 export default Home;
