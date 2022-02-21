@@ -57,7 +57,7 @@ function ItemTodo({
         ) : (
           <button
             type="button"
-            className="todoInfo"
+            className={done ? "todoInfo todoFinishLine" : "todoInfo"}
             data-id={id}
             onClick={handleEditing}
           >
