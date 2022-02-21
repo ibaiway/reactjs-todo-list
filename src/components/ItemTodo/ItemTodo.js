@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { BsXLg } from "react-icons/bs";
 
 function ItemTodo({
@@ -10,8 +10,8 @@ function ItemTodo({
   removeTodo,
   toogleEdit,
   isEditing,
+  editTodo,
 }) {
-  const textInput = useRef(null);
   const handleChange = (event) => {
     const todoId = event.target.getAttribute("data-id");
     toogleItemTodo(todoId);
@@ -22,10 +22,13 @@ function ItemTodo({
     removeTodo(todoId);
   };
   const handleEditing = (event) => {
-    console.log("PULSADO");
     const todoId = event.target.getAttribute("data-id");
     toogleEdit(todoId);
-    textInput.current.focus();
+  };
+  const handleSaveEdit = (event) => {
+    const todoId = event.target.getAttribute("data-id");
+    const editedText = event.target.value;
+    editTodo(todoId, editedText);
   };
 
   return (
@@ -38,14 +41,17 @@ function ItemTodo({
           onChange={handleChange}
           id={id}
           data-id={id}
+          data-testid="todo-item-checkbox"
         />
         <label htmlFor={id}>{empty}</label>
         {isEditing ? (
           <input
             defaultValue={text}
-            ref={textInput}
+            // eslint-disable-next-line jsx-a11y/no-autofocus
+            autoFocus
             data-id={id}
-            onBlur={handleEditing}
+            onBlur={handleSaveEdit}
+            data-testid="todo-item-input"
           />
         ) : (
           <button
@@ -57,7 +63,12 @@ function ItemTodo({
             {text}
           </button>
         )}
-        <BsXLg className="crossIcon" onClick={handleRemove} data-id={id} />
+        <BsXLg
+          className="crossIcon"
+          onClick={handleRemove}
+          data-id={id}
+          data-testid="todo-item-delete-button"
+        />
       </div>
     </>
   );

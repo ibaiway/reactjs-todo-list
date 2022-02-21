@@ -1,7 +1,13 @@
 import React from "react";
 import ListTodo from "../components/ListTodo";
 
-function Completed({ todos, toogleItemTodo, removeTodo }) {
+function Completed({
+  todos,
+  toogleItemTodo,
+  removeTodo,
+  toogleEdit,
+  editTodo,
+}) {
   const completedTodos = todos.filter((item) => {
     return item.done;
   });
@@ -11,6 +17,8 @@ function Completed({ todos, toogleItemTodo, removeTodo }) {
         todos={completedTodos}
         toogleItemTodo={toogleItemTodo}
         removeTodo={removeTodo}
+        toogleEdit={toogleEdit}
+        editTodo={editTodo}
       />
     </div>
   );
