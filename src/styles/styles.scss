@@ -92,6 +92,6 @@ a{
     font-size: 15px;
     display: none;
 }
-.list-group-item.li :hover + .crossIcon{
+.crossIcon:hover {
     display: block !important;
 }
