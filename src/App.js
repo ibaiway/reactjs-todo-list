@@ -68,6 +68,14 @@ function App() {
     setTodos([...filteredTodos]);
   }
 
+  function removeTodo(todoId) {
+    const filteredTodos = todos.filter((item) => {
+      return item.id === todoId;
+    });
+
+    setTodos([...filteredTodos]);
+  }
+
   return (
     <Router>
       <section className="imgBackground">
@@ -85,13 +93,25 @@ function App() {
         <div className="main-item-list">
           <Switch>
             <Route path="/" exact>
-              <Home todos={todos} toogleItemTodo={toogleItemTodo} />
+              <Home
+                todos={todos}
+                toogleItemTodo={toogleItemTodo}
+                removeTodo={removeTodo}
+              />
             </Route>
             <Route path="/active" exact>
-              <Active todos={todos} toogleItemTodo={toogleItemTodo} />
+              <Active
+                todos={todos}
+                toogleItemTodo={toogleItemTodo}
+                removeTodo={removeTodo}
+              />
             </Route>
             <Route path="/completed" exact>
-              <Completed todos={todos} toogleItemTodo={toogleItemTodo} />
+              <Completed
+                todos={todos}
+                toogleItemTodo={toogleItemTodo}
+                removeTodo={removeTodo}
+              />
             </Route>
           </Switch>
           {todos.length <= 0 && <EmptyTodos />}
