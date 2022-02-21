@@ -1,10 +1,22 @@
 import React from "react";
 import { BsXLg } from "react-icons/bs";
 
-function ItemTodo({ text, done = true, id, toogleItemTodo, empty = "" }) {
+function ItemTodo({
+  text,
+  done = true,
+  id,
+  toogleItemTodo,
+  empty = "",
+  removeTodo,
+}) {
   const handleChange = (event) => {
     const todoId = event.target.getAttribute("data-id");
     toogleItemTodo(todoId);
+  };
+
+  const handleRemove = (event) => {
+    const todoId = event.target.getAttribute("data-id");
+    removeTodo(todoId);
   };
 
   return (
@@ -20,7 +32,7 @@ function ItemTodo({ text, done = true, id, toogleItemTodo, empty = "" }) {
         />
         <label htmlFor={id}>{empty}</label>
         <p className="todoInfo">{text}</p>
-        <BsXLg className="crossIcon" />
+        <BsXLg className="crossIcon" onClick={handleRemove} data-id={id} />
       </div>
     </>
   );
