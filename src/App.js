@@ -76,6 +76,27 @@ function App() {
     setTodos([...filteredTodos]);
   }
 
+  function toogleEdit(todoId) {
+    /* const index = todos.findIndex((item) => {
+      return item.id === todoId
+    })
+    let editedTodos = {...todos}
+    editedTodos[index].isEditing = !editedTodos[index].isEditing */
+    const editedTodoItems = todos.map((item) => {
+      if (item.id === todoId) {
+        console.log(item.isEditing);
+        return {
+          ...item,
+          isEditing: !item.isEditing,
+        };
+      }
+
+      return item;
+    });
+
+    setTodos([...editedTodoItems]);
+  }
+
   return (
     <Router>
       <section className="imgBackground">
@@ -97,6 +118,7 @@ function App() {
                 todos={todos}
                 toogleItemTodo={toogleItemTodo}
                 removeTodo={removeTodo}
+                toogleEdit={toogleEdit}
               />
             </Route>
             <Route path="/active" exact>

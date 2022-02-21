@@ -1,10 +1,10 @@
 import React from "react";
 import ItemTodo from "../ItemTodo";
 
-function ListTodo({ todos, toogleItemTodo, removeTodo }) {
+function ListTodo({ todos, toogleItemTodo, removeTodo, toogleEdit }) {
   return (
     <ul data-testid="todos-list">
-      {todos.map(({ id, text, done }) => (
+      {todos.map(({ id, text, done, isEditing }) => (
         <li key={id} data-testid="todo-item" className="list-group-item li">
           <ItemTodo
             text={text}
@@ -12,6 +12,8 @@ function ListTodo({ todos, toogleItemTodo, removeTodo }) {
             id={id}
             toogleItemTodo={toogleItemTodo}
             removeTodo={removeTodo}
+            toogleEdit={toogleEdit}
+            isEditing={isEditing}
           />
         </li>
       ))}

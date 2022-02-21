@@ -12,6 +12,7 @@ function addTodoDetails(todo) {
     done: false,
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
+    isEditing: false,
   };
 }
 
