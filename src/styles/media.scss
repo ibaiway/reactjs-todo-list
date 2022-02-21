@@ -1,0 +1,76 @@
+@media only screen and (max-width: 980px) {
+    h1{
+        position: absolute;
+        left: 42%;
+        color: white;
+        font-weight: 600;
+    }
+}
+@media only screen and (max-width: 1400px) {
+    h1{
+        position: absolute;
+        top: 10%;
+        left: 42%;
+        color: white;
+        font-weight: 600;
+    }
+    .li-nav{
+        min-height: 40px !important;
+    }
+}
+@media only screen and (max-width: 1140px) {
+    h1{
+        position: absolute;
+        top: 6%;
+        left: 33%;
+        color: white;
+        font-weight: 600;
+        font-size: 100px;
+    }
+    .main-add-list{
+        background-color: white;
+        width: 35%;
+        border-radius: 5px;
+        height: 50px;
+        top: 26%;
+        left: 32.5%;
+        margin-top: 20px;
+        margin-bottom: 80px;
+        position:relative;
+    }
+    .invalid-feedback{
+        font-size: 12.5px;
+        width: 100%;
+        margin-top: -100px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    h1{
+        position: absolute;
+        top: 6%;
+        left: 25%;
+        color: white;
+        font-weight: 600;
+        font-size: 40px;
+    }
+    .main-add-list{
+        width: 75%;
+        left: 12.5%;
+    }
+    .li {
+        width: 75% !important;
+    }
+    .li-nav{
+        width: 75% !important;
+    }
+}
+@media only screen and (max-width: 425px) {
+    h1{
+        position: absolute;
+        top: 3%;
+        left: 25%;
+        color: white;
+        font-weight: 600;
+        font-size: 20px;
+    }
+}

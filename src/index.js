@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./styles/styles.scss";
+import "./styles/media.scss";
 import "./components/ListTodo/ListTodo.scss";
 import "./components/Footer/Footer.scss";
 import "./components/ItemTodo/Checkbox.scss";
