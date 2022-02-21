@@ -1,4 +1,5 @@
 import React from "react";
+import { BsXLg } from "react-icons/bs";
 
 function ItemTodo({ text, done = true, id, toogleItemTodo, empty = "" }) {
   const handleChange = (event) => {
@@ -19,6 +20,7 @@ function ItemTodo({ text, done = true, id, toogleItemTodo, empty = "" }) {
         />
         <label htmlFor={id}>{empty}</label>
         <p className="todoInfo">{text}</p>
+        <BsXLg className="crossIcon" />
       </div>
     </>
   );

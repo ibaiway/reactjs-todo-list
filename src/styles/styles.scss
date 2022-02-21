@@ -86,3 +86,12 @@ a{
     font-size: 25px;
     margin-bottom: 20px;
 }
+.crossIcon{
+    float: right;
+    margin-top: -23px;
+    font-size: 15px;
+    display: none;
+}
+.list-group-item.li :hover + .crossIcon{
+    display: block !important;
+}
