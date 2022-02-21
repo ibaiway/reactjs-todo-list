@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BsXLg } from "react-icons/bs";
 
 function ItemTodo({
@@ -12,6 +12,12 @@ function ItemTodo({
   isEditing,
   editTodo,
 }) {
+  const [formText, setFormText] = useState(text);
+
+  const handleTextChange = (event) => {
+    setFormText(event.target.value);
+  };
+
   const handleChange = (event) => {
     const todoId = event.target.getAttribute("data-id");
     toogleItemTodo(todoId);
@@ -26,8 +32,9 @@ function ItemTodo({
     toogleEdit(todoId);
   };
   const handleSaveEdit = (event) => {
-    const todoId = event.target.getAttribute("data-id");
-    const editedText = event.target.value;
+    event.preventDefault();
+    const todoId = id;
+    const editedText = formText;
     editTodo(todoId, editedText);
   };
 
@@ -45,15 +52,18 @@ function ItemTodo({
         />
         <label htmlFor={id}>{empty}</label>
         {isEditing ? (
-          <input
-            defaultValue={text}
-            // eslint-disable-next-line jsx-a11y/no-autofocus
-            autoFocus
-            data-id={id}
-            onBlur={handleSaveEdit}
-            data-testid="todo-item-input"
-            className="todoInput"
-          />
+          <form onSubmit={handleSaveEdit}>
+            <input
+              defaultValue={text}
+              // eslint-disable-next-line jsx-a11y/no-autofocus
+              autoFocus
+              data-id={id}
+              onChange={handleTextChange}
+              onBlur={handleSaveEdit}
+              data-testid="todo-item-input"
+              className="todoInput"
+            />
+          </form>
         ) : (
           <button
             type="button"
