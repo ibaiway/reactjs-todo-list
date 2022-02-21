@@ -52,6 +52,7 @@ function ItemTodo({
             data-id={id}
             onBlur={handleSaveEdit}
             data-testid="todo-item-input"
+            className="todoInput"
           />
         ) : (
           <button
