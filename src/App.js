@@ -70,7 +70,7 @@ function App() {
 
   function removeTodo(todoId) {
     const filteredTodos = todos.filter((item) => {
-      return item.id === todoId;
+      return item.id !== todoId;
     });
 
     setTodos([...filteredTodos]);

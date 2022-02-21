@@ -1,10 +1,14 @@
 import React from "react";
 import ListTodo from "../components/ListTodo";
 
-function Home({ todos, toogleItemTodo }) {
+function Home({ todos, toogleItemTodo, removeTodo }) {
   return (
     <div>
-      <ListTodo todos={todos} toogleItemTodo={toogleItemTodo} />
+      <ListTodo
+        todos={todos}
+        toogleItemTodo={toogleItemTodo}
+        removeTodo={removeTodo}
+      />
     </div>
   );
 }

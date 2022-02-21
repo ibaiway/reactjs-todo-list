@@ -1,7 +1,7 @@
 import React from "react";
 import ItemTodo from "../ItemTodo";
 
-function ListTodo({ todos, toogleItemTodo }) {
+function ListTodo({ todos, toogleItemTodo, removeTodo }) {
   return (
     <ul data-testid="todos-list">
       {todos.map(({ id, text, done }) => (
@@ -11,6 +11,7 @@ function ListTodo({ todos, toogleItemTodo }) {
             done={done}
             id={id}
             toogleItemTodo={toogleItemTodo}
+            removeTodo={removeTodo}
           />
         </li>
       ))}
