@@ -7,6 +7,7 @@ function Completed({
   removeTodo,
   toogleEdit,
   editTodo,
+  handleOnDragEnd,
 }) {
   const completedTodos = todos.filter((item) => {
     return item.done;
@@ -19,6 +20,7 @@ function Completed({
         removeTodo={removeTodo}
         toogleEdit={toogleEdit}
         editTodo={editTodo}
+        handleOnDragEnd={handleOnDragEnd}
       />
     </div>
   );

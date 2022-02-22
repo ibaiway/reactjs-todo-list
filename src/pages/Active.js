@@ -1,7 +1,14 @@
 import React from "react";
 import ListTodo from "../components/ListTodo";
 
-function Active({ todos, toogleItemTodo, removeTodo, toogleEdit, editTodo }) {
+function Active({
+  todos,
+  toogleItemTodo,
+  removeTodo,
+  toogleEdit,
+  editTodo,
+  handleOnDragEnd,
+}) {
   const activeTodos = todos.filter((item) => {
     return !item.done;
   });
@@ -13,6 +20,7 @@ function Active({ todos, toogleItemTodo, removeTodo, toogleEdit, editTodo }) {
         removeTodo={removeTodo}
         toogleEdit={toogleEdit}
         editTodo={editTodo}
+        handleOnDragEnd={handleOnDragEnd}
       />
     </div>
   );

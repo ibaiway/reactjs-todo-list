@@ -1,7 +1,14 @@
 import React from "react";
 import ListTodo from "../components/ListTodo";
 
-function Home({ todos, toogleItemTodo, removeTodo, toogleEdit, editTodo }) {
+function Home({
+  todos,
+  toogleItemTodo,
+  removeTodo,
+  toogleEdit,
+  editTodo,
+  handleOnDragEnd,
+}) {
   return (
     <div>
       <ListTodo
@@ -10,6 +17,7 @@ function Home({ todos, toogleItemTodo, removeTodo, toogleEdit, editTodo }) {
         removeTodo={removeTodo}
         toogleEdit={toogleEdit}
         editTodo={editTodo}
+        handleOnDragEnd={handleOnDragEnd}
       />
     </div>
   );

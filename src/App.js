@@ -108,6 +108,15 @@ function App() {
     setTodos([...editedTodoItems]);
   }
 
+  function handleOnDragEnd(result) {
+    if (!result.destination) return;
+    const items = Array.from(todos);
+    const [reorderedItem] = items.splice(result.source.index, 1);
+    items.splice(result.destination.index, 0, reorderedItem);
+
+    setTodos(items);
+  }
+
   return (
     <Router>
       <section className="imgBackground">
@@ -131,6 +140,7 @@ function App() {
                 removeTodo={removeTodo}
                 toogleEdit={toogleEdit}
                 editTodo={editTodo}
+                handleOnDragEnd={handleOnDragEnd}
               />
             </Route>
             <Route path="/active" exact>
@@ -140,6 +150,7 @@ function App() {
                 removeTodo={removeTodo}
                 toogleEdit={toogleEdit}
                 editTodo={editTodo}
+                handleOnDragEnd={handleOnDragEnd}
               />
             </Route>
             <Route path="/completed" exact>
@@ -149,6 +160,7 @@ function App() {
                 removeTodo={removeTodo}
                 toogleEdit={toogleEdit}
                 editTodo={editTodo}
+                handleOnDragEnd={handleOnDragEnd}
               />
             </Route>
           </Switch>
